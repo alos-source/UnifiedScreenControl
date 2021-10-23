@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<meta charset='utf-8'>
+	<title>ScreenControl</title>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+	<link rel='stylesheet' href='./styles.css' />
+
+	<script src='./js/webcc.min.js'></script>
+	<script src='./js/screen.min.js'></script>
+
+</head>
+
+<body>
+	<canvas id='ScreenControl'></canvas>
+    
+	<script>
+		////////////////////////////////////////////
+		// Helper functions
+
+
+		////////////////////////////////////////////
+		// Initialize the custom control
+		WebCC.start(
+			// callback function; occurs when the connection is done or failed. 
+			// "result" is a boolean defining if the connection was successfull or not.
+			function (result) {
+				if (result) {
+					console.log('screensettings CC connected successfully');
+
+					// Subscribe for value changes
+					WebCC.onPropertyChanged.subscribe(setProperty);
+				}
+				else {
+					console.log('screensettings CC connection failed');
+				}
+			},
+		//	contract (see also manifest.json)
+			{
+				// Methods
+				methods: {
+				},
+				// Events
+				events: {},
+				// Properties
+				properties: {
+					}
+			},
+			// placeholder to include additional Unified dependencies (not used in this example)
+			[],
+			// connection timeout
+			10000
+        );
+
+
+	</script>
+<div class="outerspace" style="overflow:auto">
+
+	<input id="Button1" type="button" value=CloseScreen onClick="CloseTabClicked()"/>
+    <input id="Button2" type="button" value="FullScreen" onClick="FullScreenClicked()"/>
+    <input id="Button3" type="button" value="ExitFullScreen" onClick="ExitFullScreenClicked()"/>  
+    <input id="Button4" type="button" value="ShowAlert" onClick="ShowAlertClicked()"/>    
+
+</div>
+
+                                                                                      
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+{
+  "mver": "1.2.0",
+  "control": {
+    "identity": {
+      "name": "ScreenControl",
+      "version": "1.0",
+      "displayname": "ScreenControl",
+      "icon": "./assets/screenControl.ico",
+      "type": "guid://B5EE6DEF-00EB-4880-AC1E-39A6AF506363",
+      "start": "./control/index.html"
+    },
+    "metadata": {
+      "author": "not Siemens",
+      "keywords": ["Screen", "Control"]
+    },
+    "contracts": {
+      "api": {
+        "methods": {},
+        "events": {},
+        "properties": {}
+      }
+    },
+    "types": {}
+  }
+}
