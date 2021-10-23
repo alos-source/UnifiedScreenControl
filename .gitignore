@@ -1,5 +1,8 @@
 # ignore zip files
 *.zip
 
+# ignore crc files
+*.crc
+
 # ignore changelog
 CHANGELOG.md
