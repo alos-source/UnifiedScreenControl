@@ -3,7 +3,7 @@ html, body {
   height: 100%;
 }
 body {
-  font-family: 'Siemens Sans', Hevletica, 'sans-serif';
+  font-family: 'Siemens Sans', Hevletica, 'sans-serif'; background-color: cornflowerblue;
 }
 
 #gauge {
