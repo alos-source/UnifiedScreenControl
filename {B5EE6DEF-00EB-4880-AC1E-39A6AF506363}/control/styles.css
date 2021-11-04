@@ -2,14 +2,11 @@ html, body {
   margin: 0;
   height: 100%;
 }
-body {
-  font-family: 'Siemens Sans', Hevletica, 'sans-serif'; background-color: cornflowerblue;
-}
 
-#gauge {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
+body {
+  font-family: 'Siemens Sans', Hevletica, 'sans-serif'; 
+  /* background-color: rgb(155, 184, 240);
+  background-color: #eee; */
 }
 
 .outerspace {
