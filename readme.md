@@ -1,9 +1,9 @@
-# WinCC Unified Custom Control ScreenControl
+# WinCC Unified Custom Web Control "ScreenControl"
 ## Description
-This is a CustomControl to be used in SIMATIC WinCC Unified V17.
+This is a CustomControl to be used in SIMATIC WinCC Unified V17. For reference, see the official description in the application example on [Integrating user-defined controls into WinCC Unified (Custom Web Controls)](https://support.industry.siemens.com/cs/ww/de/view/109779176).
 
 ## How-To Use?
-Copy zip-file either in global CustomControl folder, or in CustomControl folder in the TIA-Portal Project. The CustomControl will appear as "ScreenControl".
+Copy zip-archive "{B5EE6DEF-00EB-4880-AC1E-39A6AF506363}.zip" either in global CustomControl folder ("C:\\Program Files\\Siemens\\Automation\\Portal V17\\Data\\Hmi\\CustomControls"), or in CustomControl folder in the TIA-Portal Project ("…Project_1\\UserFiles\\CustomControls"). The CustomControl will appear as "ScreenControl".
 
 ## Evironment
 This is a CustomControl to be used in SIMATIC WinCC Unified V17 and displayed in a Chrome Browser.

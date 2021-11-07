@@ -6,3 +6,6 @@
 
 # ignore changelog
 CHANGELOG.md
+
+# ignore pdf
+*.pdf
