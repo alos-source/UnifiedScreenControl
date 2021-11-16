@@ -22,6 +22,35 @@
 		// Helper functions
 
 
+		// This is a callback function that is called every time a contract property changes. The function forwards the change to 
+		// other functions so you can see the new value in the control.
+		// - data: object containing a key and a value property. The "key" contains the name of the changed contract property and 
+		//         the "value" contains the new value.
+		function setProperty(data) {
+			// console.log('onPropertyChanged ' + data.key);  // uncomment this line to check whether data is incoming in the browser console from WinCC Unified
+			switch (data.key) {
+				case 'EnableCloseScreen'.value =1:					
+					{document.getElementById("Button1").style.display="display";}
+					break;
+				case 'EnableFullScreenOn'.value =1:
+					{document.getElementById("Button2").style.display="display";}
+					break;
+				case 'EnableFullScreenExit'.value =1:
+					{document.getElementById("Button3").style.display="display";}
+					break;
+				case 'EnableFullScreenToggle'.value =1:
+					{document.getElementById("Button4").style.display="display";}
+					break;
+				case 'EnableAlert'.value =1:
+					{document.getElementById("Button5").style.display="display";}
+					break;
+				case 'EnableNewWindow'.value =1:
+					{document.getElementById("Button6").style.display="display";}
+					break;
+			}
+		}
+
+
 		////////////////////////////////////////////
 		// Initialize the custom control
 		WebCC.start(
@@ -30,7 +59,12 @@
 			function (result) {
 				if (result) {
 					console.log('screensettings CC connected successfully');
-
+					setProperty({ key: 'EnableCloseScreen', value: WebCC.Properties.EnableCloseScreen });
+					setProperty({ key: 'EnableFullScreenOn', value: WebCC.Properties.EnableFullScreenOn });
+					setProperty({ key: 'EnableFullScreenExit', value: WebCC.Properties.EnableFullScreenExit });
+					setProperty({ key: 'EnableFullScreenToggle', value: WebCC.Properties.EnableFullScreenToggle });
+					setProperty({ key: 'EnableAlert', value: WebCC.Properties.EnableAlert });
+					setProperty({ key: 'EnableNewWindow', value: WebCC.Properties.EnableNewWindow });
 					// Subscribe for value changes
 					WebCC.onPropertyChanged.subscribe(setProperty);
 				}
@@ -62,11 +96,12 @@
 
 <div class="outerspace" style="overflow:auto">
 
-	<input id="Button1" type="button" value=CloseScreen onClick="CloseTabClicked()"/>
+	<input id="Button1" type="button" value="CloseScreen" onClick="CloseTabClicked()"/>
     <input id="Button2" type="button" value="FullScreen" onClick="FullScreenClicked()"/>
     <input id="Button3" type="button" value="ExitFullScreen" onClick="ExitFullScreenClicked()"/> 
-	<input id="Button2" type="button" value="FullScreen Toggle" onClick="FullScreenToggle()"/> 
-    <input id="Button4" type="button" value="ShowAlert" onClick="ShowAlertClicked()"/>    
+	<input id="Button4" type="button" value="FullScreen Toggle" onClick="FullScreenToggle()"/> 
+    <input id="Button5" type="button" value="ShowAlert" onClick="ShowAlertClicked()"/>    
+    <input id="Button6" type="button" value="OpenWindow" onClick="windowOpen()"/>    
 
 </div>
 

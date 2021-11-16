@@ -17,7 +17,33 @@
       "api": {
         "methods": {},
         "events": {},
-        "properties": {}
+        "properties": {
+
+          "EnableCloseScreen": {
+						"type": "boolean",
+						"default": 0
+					},
+          "EnableFullScreenOn": {
+						"type": "boolean",
+						"default": 0
+					},
+          "EnableFullScreenExit": {
+						"type": "boolean",
+						"default": 0
+					},
+          "EnableFullScreenToggle": {
+						"type": "boolean",
+						"default": 0
+					},
+          "EnableAlert": {
+						"type": "boolean",
+						"default": 0
+					},
+          "EnableNewWindow": {
+						"type": "boolean",
+						"default": 0
+					}
+        }
       }
     },
     "types": {}
