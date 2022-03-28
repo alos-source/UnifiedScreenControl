@@ -29,25 +29,62 @@
 		function setProperty(data) {
 			// console.log('onPropertyChanged ' + data.key);  // uncomment this line to check whether data is incoming in the browser console from WinCC Unified
 			switch (data.key) {
-				case 'EnableCloseScreen'.value =1:					
-					{document.getElementById("Button1").style.display="display";}
+				case 'EnableCloseScreen':
+					if(!data.value) {		
+						document.getElementById("Button1").style.display = 'none';
+						//document.getElementById("Button1").style.visibility = "visible";
+					} else {
+						document.getElementById("Button1").style.display = '';
+						//document.getElementById("Button1").style.visibility = "hidden";
+					}					
 					break;
-				case 'EnableFullScreenOn'.value =1:
-					{document.getElementById("Button2").style.display="display";}
+				case 'EnableFullScreenOn':
+					{
+						if(!data.value) {	
+							document.getElementById("Button2").style.display="none";
+						} else {
+							document.getElementById("Button2").style.display="";
+						}
+					}
 					break;
-				case 'EnableFullScreenExit'.value =1:
-					{document.getElementById("Button3").style.display="display";}
+				case 'EnableFullScreenExit':
+					{
+						if(!data.value) {
+							document.getElementById("Button3").style.display="none";
+						} else {
+							document.getElementById("Button3").style.display="";
+						}
+					}
 					break;
-				case 'EnableFullScreenToggle'.value =1:
-					{document.getElementById("Button4").style.display="display";}
+				case 'EnableFullScreenToggle':
+					{
+						if(!data.value) {
+							document.getElementById("Button4").style.display="none";
+						} else {
+							document.getElementById("Button4").style.display="";
+						}
+					}
 					break;
-				case 'EnableAlert'.value =1:
-					{document.getElementById("Button5").style.display="display";}
+				case 'EnableAlert':
+					{
+						if(!data.value) {
+							document.getElementById("Button5").style.display = "none";
+						} else {
+							document.getElementById("Button5").style.display = "";
+						}
+					}
 					break;
-				case 'EnableNewWindow'.value =1:
-					{document.getElementById("Button6").style.display="display";}
-					break;
+				case 'EnableNewWindow':
+					{
+						if(!data.value) {
+							document.getElementById("Button6").style.display="none";
+						} else {
+							document.getElementById("Button6").style.display="";
+						}	
+					}
+					break;			
 			}
+			
 		}
 
 
@@ -72,16 +109,36 @@
 					console.log('screensettings CC connection failed');
 				}
 			},
-		//	contract (see also manifest.json)
+			//	contract (see also manifest.json)
 			{
 				// Methods
 				methods: {
 				},
 				// Events
-				events: {},
+				events: {
+				},
 				// Properties
 				properties: {
-					}
+					'EnableCloseScreen': 0,
+					'EnableFullScreenOn' : 0,
+					'EnableFullScreenExit': 0,
+					'EnableFullScreenToggle' : 0,
+					"EnableAlert": 0,
+					"EnableNewWindow": 0,
+					Alignment: {
+						Horizontal: 'Center',
+						Vertical: 'Center'
+                    },
+                    LabelFont: {
+						Description: '',
+						Weight: 600,
+						Name: 'Siemens Sans',
+						Italic: false,
+						Size: 16,
+						Underline: false,
+						StrikeOut: 0
+                    }
+				}
 			},
 			// placeholder to include additional Unified dependencies (not used in this example)
 			[],
