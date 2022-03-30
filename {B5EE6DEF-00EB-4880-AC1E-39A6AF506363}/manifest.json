@@ -21,27 +21,27 @@
 
           "EnableCloseScreen": {
 						"type": "boolean",
-						"default": 0
+						"default": 1
 					},
           "EnableFullScreenOn": {
 						"type": "boolean",
-						"default": 0
+						"default": 1
 					},
           "EnableFullScreenExit": {
 						"type": "boolean",
-						"default": 0
+						"default": 1
 					},
           "EnableFullScreenToggle": {
 						"type": "boolean",
-						"default": 0
+						"default": 1
 					},
           "EnableAlert": {
 						"type": "boolean",
-						"default": 0
+						"default": 1
 					},
           "EnableNewWindow": {
 						"type": "boolean",
-						"default": 0
+						"default": 1
 					}
         }
       }
