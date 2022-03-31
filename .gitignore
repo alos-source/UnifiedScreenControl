@@ -9,3 +9,6 @@ CHANGELOG.md
 
 # ignore pdf
 *.pdf
+
+# ignore Builds
+Builds/
