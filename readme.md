@@ -29,6 +29,9 @@ The unifiedCWCPreview.html embeds the CWC as an iFrame, which should behave simi
 ## Status
 The whole project has to be considered as *under development* and not for productive use!
 
+## Restrictions
+The function for "closeScreen" only works, when the screen has been open via the Unified Login-Screen. This is due to restrictions of the (Window.Close()-Mechanism)[https://developer.mozilla.org/en/docs/Web/API/Window/close].
+
 ## Contributing
 If you found any bugs, you may report using the "*Issues*" function in the [repository](https://github.com/alos-source/UnifiedScreenControl).
 Also you may suggest bugfixes and/or new features as pull-requests. Please make sure your request and code is well documented and commented in english.
